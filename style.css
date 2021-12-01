@@ -1,88 +1,79 @@
-body{
-    margin: 0;
-    padding: 0;
-    background: url(asset/bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body {
+   background-image:url("alam.jfif");
+   background-size:100% 100%;
+   margin:auto;
+   background-attachment:fixed;
+   background-repeat:no-repeat;
+} 
+
+.menu {
+    font-family: "Poppins";
+    font-weight:bold;
+    height:70px;
+    width:100%;
+    background:black;
+    border-radius:5px;
+    font-size:18px;
 }
 
-.loginbox{
-    width: 320px;
-    height: 420px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
-    border-radius: 10px;
+label {
+    font-family:comic sans ms;
+    font: size 20pt;
+    color:white;
+    margin:10px;
+    padding:5px;
+    float:left;
 }
 
-.avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
+.menu ul {
+    margin:0px;
+    padding:5px;
+    background:none;
+    display:block;
+    float:right;
 }
 
-h1{
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
+.menu ul li {
+    list-style:none;
+    display:inline-block;
 }
 
-.loginbox p{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
+ .menu ul li a {
+    display:block;
+    text-decoration:none;
+    padding:20px;
+    color:#ddd;
 }
 
-.loginbox input{
-    width: 100%;
-    margin-bottom: 20px;
+.menu ul li a:hover {
+    display:block;
+    color:green;
+    background:#222;
+    box-shadow:inset 0px 0px 5px #000;
 }
 
-.loginbox input[type="text"], input[type="password"] {
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #fff;
-    font-size: 12px;
+.menu ul li .dropdown {
+    display:none;    
 }
 
-.loginbox input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #c472c7;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 200px;
+.menu ul li:hover.dropdown {
+    display:block;
+    background:black;
+    position:absolute;
+    padding:10px;
 }
 
-.loginbox input[type="submit"]:hover {
-    cursor: pointer;
-    background: #88508a;
-    color: #fff;
+.menu ul li:hover .dropdown li {
+    display:block;
 }
 
-.loginbox a{
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: #c472c7;
+.menu ul li:hover .dropdown li a {
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:5px;
 }
 
-.loginbox a:hover {
-    cursor: pointer;
-    color: #88508a;
+.menu ul li:hover .dropdown li a:hover {
+    background:#222;
+    box-shadow:inset 0px 0px 5px #000;
 }
