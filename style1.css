@@ -1,0 +1,82 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: auto
+}
+
+.header {
+    list-style: none;
+    margin-top: 20px;
+    float: right;
+}
+
+.header li {
+    display: inline-block;
+}
+
+.menu .logo img {
+    width: 175px;
+    float: left;
+    height: auto;
+    margin-top: 10px;
+}
+.menu {
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    background-color: grey;
+}
+
+.menu img {
+    width: 300px;
+    height: auto;
+    margin: 20px;
+    padding: 5px;
+    float: left;
+    position: fixed;
+}
+
+
+.menu ul li a {
+    display:block;
+    text-decoration:none;
+    padding:20px;
+    color: white;;
+    font-weight: bold;
+}
+
+.menu ul li a:hover {
+    display:block;
+    color: #a472a4;;
+    background:#222;
+    box-shadow:inset 0px 0px 5px #000;
+}
+
+footer {
+    padding: 50px 0px 50px 0px;
+    background-color: grey;
+    color: white;
+}
+footer .layar-dalam {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer .layar-dalam div {
+    width: 20%;
+}
+footer .layar-dalam h5 {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+footer ,.layar-dalam .copyright {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 3px solid #cf8729;
+    text-align: center;
+}

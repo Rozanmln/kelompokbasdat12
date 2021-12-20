@@ -1,41 +1,65 @@
 <html>
     <head>
         <title> Dropdown Menu </title>
-        <link rel="stylesheet" href="styleindex.css" type="text/css">
+        <link rel="stylesheet" href="style1.css" type="text/css">
     </head>
-<body>
-
-<nav class="menu">
-    <label>Beasiswa</label>
-    <ul> 
-         <li><a href="#">Home</a></li>
-        <li><a href="#">Gallery</a>
-            <ul class="dropdown"></ul>
-                <li><a href="#">Photo</a></li>
-                <li><a href="#">Image</a></li>
-                <li><a href="#">Document</a></li>
+    <body>
+        <nav class="menu">
+            <div class="logo">
+                <img src="asset/hehe.png"/>
+            </div>
+            <ul class="header"> 
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Add content</a></li>
+                <li><a href="#">Log out</a></li>
+            </ul>   
+        </nav>
+        <nav class="content">
+            <ul>
+            <h2><?= $content["Judul"];?></h2>
+            <p><?= $content["Body"];?></p>
+            <img src="img/<?= $content["Poster"];?>" alt="" width="200px">
+            <p><?= $content["Kontak"];?></p>
+            <p>Comment</p>
+            <form action="" method="post">
+            <input type="hidden" name="info_id" value="<?= $content["Info_ID"] ?>">
+            <?php foreach( $comment as $commentRow ) : ?>
+                <p><?= $commentRow["Body"];?></p>
+            <?php endforeach; ?>
+            <input type="text" name="Comment" placeholder="Comment">
+            <input type="submit" name="submitComment" value="Submit">
+            </form>
             </ul>
-        </li>
-         <li><a href="#">Contact Us</a></li>
-         <li><a href="#">About Us</a></li>
-    </ul>   
-</nav>
-<?php
-
-?>
-<nav>
-    <ul>
-        <?php foreach( $content as $row ) : ?>
-        <a href="edit.php?info_id=<?= $row["Info_ID"];?>">Edit</a> 
-        <a href="delete.php?info_id=<?= $row["Info_ID"];?>">Delete</a>
-        <a href="detail.php?info_id=<?= $row["Info_ID"];?>">detail</a>
-        <h2><?= $row["Judul"];?></h2>
-        <p><?= $row["Body"];?></p>
-        <img src="img/<?= $row["Poster"];?>" alt="" width="200px">
-        <p><?= $row["Kontak"];?></p>
-        <?php endforeach; ?>
-    </ul>
-</nav>
-
-</body>
+        </nav>
+        
+    </body>
+    <footer id="contact">
+        <div class="layar-dalam">
+            <div>
+                <h5>Info</h5>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+                sequi.
+            </div>
+            <div>
+                <h5>Contact</h5>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+                sequi.
+            </div>
+            <div>
+                <h5>Help</h5>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+                sequi.
+            </div>
+            <div>
+                <h5>Sitemap</h5>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+                sequi.
+            </div>
+        </div>
+        <div class="layar-dalam">
+            <div class="copyright">
+                &copy; 2021 Yukbeasiswa
+            </div>
+        </div>
+    </footer>
 </html>
