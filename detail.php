@@ -7,20 +7,20 @@ if( !isset($_SESSION["login"])) {
             exit;
 } 
 
-$content = query("SELECT * FROM info_beasiswa");
+$info_id = $_GET["info_id"];
+$content = query("SELECT * FROM info_beasiswa WHERE info_id = $info_id")[0];
+$comment = query("SELECT * FROM komentar WHERE info_id = $info_id");
+// var_dump($content["Info_ID"]); die;
 
 
-// $comment = query("SELECT * FROM komentar");
-// $answer = query("SELECT * FROM jawaban");
+if( isset($_POST["submitComment"])) {
 
-// if( isset($_POST["submitComment"])) {
-
-//     if (insertComment($_POST) > 0){
-//         header("Location: index.php");
-//     } else {
-//         echo mysqli_error($conn);
-//     }
-// } 
+    if (insertComment($_POST) > 0){
+        header("Location: detail.php");
+    } else {
+        echo mysqli_error($conn);
+    }
+}
 
 // if( isset($_POST["submitAnswer"])) {
 
@@ -60,15 +60,19 @@ $content = query("SELECT * FROM info_beasiswa");
 ?>
 <nav>
     <ul>
-        <?php foreach( $content as $row ) : ?>
-        <a href="edit.php?info_id=<?= $row["Info_ID"];?>">Edit</a> 
-        <a href="delete.php?info_id=<?= $row["Info_ID"];?>">Delete</a>
-        <a href="detail.php?info_id=<?= $row["Info_ID"];?>">detail</a>
-        <h2><?= $row["Judul"];?></h2>
-        <p><?= $row["Body"];?></p>
-        <img src="img/<?= $row["Poster"];?>" alt="" width="200px">
-        <p><?= $row["Kontak"];?></p>
-        <?php endforeach; ?>
+    <h2><?= $content["Judul"];?></h2>
+    <p><?= $content["Body"];?></p>
+    <img src="img/<?= $content["Poster"];?>" alt="" width="200px">
+    <p><?= $content["Kontak"];?></p>
+    <p>Comment</p>
+    <form action="" method="post">
+    <input type="hidden" name="info_id" value="<?= $content["Info_ID"] ?>">
+    <?php foreach( $comment as $commentRow ) : ?>
+        <p><?= $commentRow["Body"];?></p>
+    <?php endforeach; ?>
+    <input type="text" name="Comment" placeholder="Comment">
+    <input type="submit" name="submitComment" value="Submit">
+    </form>
     </ul>
 </nav>
 
