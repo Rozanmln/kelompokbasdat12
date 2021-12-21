@@ -4,7 +4,8 @@
 }
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: auto
+    margin: auto;
+    max-width: 100%;
 }
 
 .header {
@@ -36,9 +37,8 @@ body {
     margin: 20px;
     padding: 5px;
     float: left;
-    position: fixed;
+    position: relative;
 }
-
 
 .menu ul li a {
     display:block;
@@ -55,24 +55,94 @@ body {
     box-shadow:inset 0px 0px 5px #000;
 }
 
+.content {
+    margin-top: 10px;
+    padding-bottom: 20%;
+}
+
+.content h2 {
+    margin-top: 10px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #a472a4;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.content p {
+    font-size: 20px;
+    color: grey;
+    position: relative;
+    max-width: 85%;
+    float: right;
+
+}
+
+.content a:hover {
+    color: #a472a4;;
+}
+
+.content a {
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 2px solid #c472c4c4;
+    background: #c472c7;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    float: right;
+}
+
+.poster {
+    padding: 5px;
+    position: relative;
+    width: 200px;
+}
+
+.content h4 {
+    padding: 5px;
+    color: grey;
+    
+}
+
+.content h5{
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #c472c7;
+}
+
+.content h3 {
+    padding: 5px;
+    font-size: 20px;
+    font-style: italic;
+    position: relative;
+}
+
 footer {
     padding: 50px 0px 50px 0px;
     background-color: grey;
     color: white;
 }
+
 footer .layar-dalam {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 footer .layar-dalam div {
     width: 20%;
 }
+
 footer .layar-dalam h5 {
     margin-top: 0px;
     font-size: 20px;
     font-weight: bold;
 }
+
 footer ,.layar-dalam .copyright {
     width: 100%;
     margin-top: 30px;
